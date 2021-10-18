@@ -17,9 +17,9 @@ app.get('/games', gameController.getGames);
 
 app.post('/games', gameController.postGame);
 
-app.get('/customer', customerController.getCustomers);
+app.get('/customers', customerController.getCustomers);
 
-app.get('/customer/:id', customerController.getCustomerById);
+app.get('/customers/:id', customerController.getCustomerById);
 
 app.post('/customers', customerController.postCustomer);
 

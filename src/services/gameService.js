@@ -2,7 +2,7 @@ import * as gameRepository from '../repositories/gameRepository.js';
 import { checkCategoryById } from './categoryService.js';
 
 export async function getGames(name){
-    const gameList = await (name.length) ? gameRepository.selectGamesByName(name) : gameRepository.selectAllGames();
+    const gameList = await (name) ? gameRepository.selectGamesByName(name) : gameRepository.selectAllGames();
     return (gameList.length === 0) ? false : gameList;
 }
 
