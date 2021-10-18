@@ -4,6 +4,7 @@ import cors from 'cors';
 import * as categoryController from './controllers/categoryController.js';
 import * as gameController from './controllers/gameController.js'
 import * as customerController from './controllers/customerController.js'
+import * as rentalController from './controllers/rentalController.js'
 
 const app = express();
 app.use(cors());
@@ -25,20 +26,20 @@ app.post('/customers', customerController.postCustomer);
 
 app.put('/customers/:id', customerController.putCustomer);
 
-app.get('/rentals', (req, res)=>{
-    res.sendStatus(501);
-});
+app.get('/rentals', 
+    rentalController.getRentals
+);
 
-app.post('/rentals', (req, res)=>{
-    res.sendStatus(501);
-});
+app.post('/rentals', 
+    rentalController.postRentals
+);
 
-app.get('/rentals/:id/return', (req, res)=>{
-    res.sendStatus(501);
-});
+app.get('/rentals/:id/return', 
+    rentalController.postReturnRentals
+);
 
-app.delete('/rentals/:id', (req, res)=>{
-    res.sendStatus(501);
-});
+app.delete('/rentals/:id', 
+    rentalController.deleteRentals
+);
 
 export default app;
