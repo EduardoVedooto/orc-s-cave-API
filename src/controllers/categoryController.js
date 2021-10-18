@@ -16,7 +16,7 @@ export async function postCategories (req, res) {
         if(!name){
             return res.sendStatus(400);
         }
-        const found = await categoryService.checkCategoryByName();
+        const found = await categoryService.checkCategoryByName(name);
         if (found) {
             return res.sendStatus(409);
         }
